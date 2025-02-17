@@ -20,49 +20,83 @@ function Register() {
   };
 
   return (
-    <div className="container mt-5">
-    <h2 className="text-center mb-4">Register</h2>
-    <form onSubmit={handleRegister} className="w-50 mx-auto p-4 border rounded shadow">
-        <div className="mb-3">
-            <label htmlFor="fullName" className="form-label">Full Name</label>
-            <input 
-                type="text" 
-                className="form-control" 
-                id="fullName" 
-                placeholder="Enter your full name" 
-                value={fullName} 
-                onChange={(e) => setFullName(e.target.value)} 
-                required 
+    <div
+      className="d-flex justify-content-center align-items-center vh-100"
+      style={{
+        background: "linear-gradient(135deg, #667eea, #764ba2)",
+        minHeight: "100vh",
+      }}
+    >
+      <div
+        className="p-4 shadow-lg rounded-4 text-center"
+        style={{
+          width: "400px",
+          backgroundColor: "white",
+          padding: "2rem",
+          borderRadius: "12px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <h2 className="fw-bold text-primary mb-3">Sign Up</h2>
+        <form onSubmit={handleRegister}>
+          <div className="mb-3 text-start">
+            <label htmlFor="fullName" className="form-label fw-semibold">Full Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="fullName"
+              placeholder="Enter your full name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
             />
-        </div>
-        <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email</label>
-            <input 
-                type="email" 
-                className="form-control" 
-                id="email" 
-                placeholder="Enter your email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)} 
-                required 
+          </div>
+          <div className="mb-3 text-start">
+            <label htmlFor="email" className="form-label fw-semibold">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
-        </div>
-        <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
-            <input 
-                type="password" 
-                className="form-control" 
-                id="password" 
-                placeholder="Enter your password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                required 
+          </div>
+          <div className="mb-3 text-start">
+            <label htmlFor="password" className="form-label fw-semibold">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
-        </div>
-        <button type="submit" className="btn btn-primary w-100">Register</button>
-    </form>
-</div>
-
+          </div>
+          <button
+            type="submit"
+            className="btn w-100"
+            style={{
+              backgroundColor: "#2563eb",
+              color: "white",
+              borderRadius: "6px",
+              fontWeight: "bold",
+              padding: "10px",
+              transition: "0.3s",
+            }}
+            onMouseOver={(e) => (e.target.style.backgroundColor = "#1d4ed8")}
+            onMouseOut={(e) => (e.target.style.backgroundColor = "#2563eb")}
+          >
+            Register
+          </button>
+        </form>
+        <p className="mt-3">
+          Already have an account? <a href="/login" className="text-primary fw-bold" style={{ textDecoration: "none" }}>Sign In</a>
+        </p>
+      </div>
+    </div>
   );
 }
 
